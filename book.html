@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a café visit (prototype) | Rescued Treasures Cat Café</title>
+<meta name="description" content="Prototype booking flow for Rescued Treasures Cat Café. Nothing is reserved on this page.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/img/logo-nobg.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Figtree:wght@400;500;600;700&amp;family=Caveat:wght@600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0B5E43}a:hover{color:#121513}
+.pv{--green:#14AE7C;--green-d:#0B5E43;--yellow:#F3C35F;--yellow-l:#F9E4B0;--cream:#FBF5E8;--ink:#121513;--ink-2:#434A45;--ease:cubic-bezier(.22,.8,.24,1);font-family:'Figtree',system-ui,sans-serif;color:var(--ink);background:var(--cream);font-size:18px;line-height:1.55;overflow-x:clip;min-height:1200px}
+.pv *{box-sizing:border-box}
+.pv img{display:block;max-width:100%}
+.pv h1,.pv h2,.pv h3{margin:0}
+.pv :focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.disp{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;letter-spacing:-.035em;line-height:.95}
+.hand{font-family:'Caveat',cursive;font-weight:700}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.hdr{background:var(--cream);border-bottom:1px solid rgba(18,21,19,.1)}
+.hdr-in{display:flex;align-items:center;gap:16px;min-height:76px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:44px;width:auto}
+.back{margin-left:auto;font-weight:700;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 6px}
+.back:hover{color:var(--green-d)}
+.proto{background:var(--yellow);border-bottom:2px dashed var(--ink)}
+.proto p{margin:0;padding:14px 0;font-size:16px;font-weight:600}
+.top{padding:56px 0 34px}
+.kicker{font-family:'Caveat',cursive;font-weight:700;font-size:30px;line-height:1;color:var(--green-d);display:block;margin-bottom:12px;transform:rotate(-2deg);transform-origin:left}
+.top h1{font-size:clamp(48px,6vw,88px);max-width:12em}
+.top p{margin:18px 0 0;font-size:19px;color:var(--ink-2);max-width:36em}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:56px;align-items:start;padding-bottom:120px}
+fieldset{border:0;margin:0 0 44px;padding:0;min-width:0}
+legend{padding:0;margin-bottom:18px;display:flex;align-items:baseline;gap:14px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;letter-spacing:-.03em}
+legend .n{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--yellow);font-size:18px;letter-spacing:0;flex:none;transform:translateY(-4px)}
+.hint{margin:-8px 0 16px;font-size:16px;color:var(--ink-2)}
+.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
+.day{min-height:92px;border:2px solid var(--ink);background:#fff;border-radius:18px;padding:10px 6px;font-family:inherit;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:transform .2s var(--ease),background-color .2s}
+.day:hover{transform:translateY(-3px)}
+.day .dw{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.day .dn{font-family:'Bricolage Grotesque',sans-serif;font-size:30px;font-weight:800;line-height:1}
+.day .dm{font-size:13px}
+.day.sel{background:var(--ink);color:var(--cream)}
+.day[disabled]{background:transparent;border-style:dashed;border-color:#8A8F8B;color:#6B716D;cursor:not-allowed;transform:none}
+.times{display:flex;flex-wrap:wrap;gap:10px}
+.time{min-height:52px;min-width:104px;padding:0 18px;border:2px solid var(--ink);background:#fff;border-radius:999px;font:700 17px 'Figtree',sans-serif;color:var(--ink);cursor:pointer;transition:transform .2s var(--ease),background-color .2s}
+.time:hover{transform:translateY(-2px)}
+.time.sel{background:var(--green);border-color:var(--green-d)}
+.empty{border:2px dashed rgba(18,21,19,.35);border-radius:18px;padding:18px 20px;color:var(--ink-2);font-size:16px;margin:0}
+.stepper{display:flex;align-items:center;gap:18px}
+.sbtn{width:56px;height:56px;border-radius:50%;border:2px solid var(--ink);background:#fff;display:grid;place-items:center;cursor:pointer;color:var(--ink);transition:background-color .2s,transform .2s var(--ease)}
+.sbtn:hover{background:var(--yellow)}
+.sbtn:active{transform:scale(.94)}
+.sbtn[disabled]{opacity:.35;cursor:not-allowed;background:#fff}
+.count{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;min-width:70px;text-align:center;line-height:1}
+.check{display:grid;grid-template-columns:28px 1fr;gap:14px;align-items:start;cursor:pointer;font-size:17px}
+.check input{width:24px;height:24px;margin:2px 0 0;accent-color:#0B5E43;cursor:pointer}
+.rules{margin:0 0 18px;padding-left:20px;color:var(--ink-2);font-size:16px}
+.rules li{margin-bottom:4px}
+.side{position:relative;margin-top:110px}
+.side-cat{position:absolute;right:26px;bottom:calc(100% - 8px);width:120px;z-index:2}
+.sum{background:var(--ink);color:var(--cream);border-radius:34px 34px 34px 90px;padding:34px 30px 36px;position:relative}
+.sum h2{font-size:34px;color:var(--cream);margin-bottom:20px}
+.sum dl{margin:0 0 24px}
+.sum dl div{display:grid;grid-template-columns:90px 1fr;gap:10px;padding:12px 0;border-top:1px solid rgba(251,245,232,.2)}
+.sum dt{color:#BDB8AC;font-size:15px}
+.sum dd{margin:0;font-weight:700}
+.sum .todo{color:#BDB8AC;font-weight:500;font-style:italic}
+.go{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:58px;border-radius:999px;font:700 17px 'Figtree',sans-serif;text-decoration:none;border:2px solid var(--yellow);transition:transform .25s var(--ease),background-color .25s}
+a.go{background:var(--yellow);color:var(--ink)}
+a.go:hover{background:#FFD57A;color:var(--ink);transform:translateY(-2px)}
+a.go .arr{transition:transform .3s var(--ease)}
+a.go:hover .arr,a.go:focus-visible .arr{transform:translateX(5px)}
+button.go{background:transparent;color:#BDB8AC;border-color:#5C625E;cursor:not-allowed}
+.fine{font-size:14px;color:#C9C4B8;margin:16px 0 0}
+.status{font-size:15px;color:#E9E4D8;margin:14px 0 0;min-height:22px}
+.cnote{margin-top:28px;border:2px dashed #9A6A00;background:#FFF8E5;border-radius:16px;padding:16px 20px;font-size:15px;color:#4A3500}
+.cnote b{display:block;margin-bottom:4px;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+@media (max-width:980px){
+.grid{grid-template-columns:1fr}
+.side{margin-top:120px}
+}
+@media (max-width:640px){
+.days{grid-template-columns:repeat(4,minmax(0,1fr))}
+.time{flex:1 1 calc(33% - 10px);min-width:0}
+}
+@media (prefers-reduced-motion:reduce){.pv *{transition:none !important;animation:none !important}}
+</style>
+</head>
+<body>
+
+
+
+
+<div class="pv">
+<header class="hdr">
+<div class="wrap hdr-in">
+<a class="brand" href="index.html"><img src="assets/img/logo-nobg.png" alt="PALNV home" width="300" height="196"></a>
+<a class="back" href="index.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>Back to the café</a>
+</div>
+</header>
+<div class="proto" role="note"><div class="wrap"><p>Prototype booking flow. Nothing is reserved on this page. Your session is only booked once PALNV&#39;s official booking system confirms it.</p></div></div>
+<main class="wrap">
+<div class="top">
+<span class="kicker">Book a café visit</span>
+<h1 class="disp">Pick your hour with the cats.</h1>
+<p>Choose a day, a start time and your group size. We&#39;ll hand you over to PALNV&#39;s booking system to check availability and confirm.</p>
+</div>
+<div class="grid">
+<form>
+<fieldset>
+<legend><span class="n">1</span>Choose a day</legend>
+<p class="hint">The café is closed on Mondays and Tuesdays.</p>
+<div class="days" id="days" role="group" aria-label="Days"></div>
+</fieldset>
+<fieldset>
+<legend><span class="n">2</span>Choose a start time</legend>
+<p class="hint">Sessions start on the hour. Please arrive 5 to 10 minutes early to check in.</p>
+<div class="times" id="times" role="group" aria-label="Start times" hidden=""></div>
+<div id="noDay"><p class="empty">Pick a day first and the start times for that day will appear here.</p></div>
+</fieldset>
+<fieldset>
+<legend><span class="n">3</span>How many guests?</legend>
+<p class="hint">The café holds up to 15 people. Children must be 8 or older.</p>
+<div class="stepper">
+<button type="button" class="sbtn" aria-label="Remove a guest" id="dec" disabled=""><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg></button>
+<output class="count" aria-live="polite" id="guests" aria-label="2 guests">2</output>
+<button type="button" class="sbtn" aria-label="Add a guest" id="inc"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></button>
+</div>
+</fieldset>
+<fieldset>
+<legend><span class="n">4</span>House rules</legend>
+<ul class="rules">
+<li>Children 8 and older only.</li>
+<li>Arrive 5 to 10 minutes before your session.</li>
+<li>Adoptions are first-come, first-served. There are no pre-adoptions.</li>
+<li>PALNV notes that booking fees are non-refundable.</li>
+</ul>
+<label class="check"><input type="checkbox" id="agree"><span>I&#39;ve read the house rules.</span></label>
+</fieldset>
+
+<div class="cnote"><b>Client to confirm</b>Start times assume a 12 PM opening (palnv.org/hours). The reservations page lists 11 AM. Session length is shown as one hour because sessions are priced and started hourly. Real availability comes from Acuity.</div>
+
+</form>
+<aside class="side" aria-labelledby="sum-title">
+<img class="side-cat" src="assets/img/happy-cat.webp" alt="" aria-hidden="true">
+<div class="sum">
+<h2 class="disp" id="sum-title">Your visit</h2>
+<dl>
+<div><dt>Day</dt><dd class="todo" id="sumDay">Not chosen yet</dd></div>
+<div><dt>Time</dt><dd class="todo" id="sumTime">Not chosen yet</dd></div>
+<div><dt>Guests</dt><dd id="sumGuests">2 guests</dd></div>
+</dl>
+<div id="goWrap" hidden=""><a class="go" href="https://app.acuityscheduling.com/schedule.php?owner=25452412" target="_blank" rel="noopener">Continue to PALNV booking <svg class="arr" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+<div id="goOff"><button class="go" type="button" disabled="">Continue to PALNV booking</button></div>
+<p class="status" aria-live="polite"><span id="status">Choose a day to continue.</span></p>
+<p class="fine">Opens PALNV&#39;s booking system (Acuity) in a new tab. Choose the same day, time and guests there. Nothing has been booked yet.</p>
+</div>
+</aside>
+</div>
+</main>
+</div>
+
+<script src="assets/js/book.js" defer></script>
+</body>
+</html>

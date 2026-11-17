@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adoptable cats | Rescued Treasures Cat Café by PALNV</title>
+<meta name="description" content="Meet adoptable rescue cats at Rescued Treasures Cat Café by PALNV in Las Vegas.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/img/logo-nobg.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Figtree:wght@400;500;600;700&amp;family=Caveat:wght@600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0B5E43}a:hover{color:#121513}
+.pv{--green:#14AE7C;--green-d:#0B5E43;--yellow:#F3C35F;--yellow-l:#F9E4B0;--cream:#FBF5E8;--ink:#121513;--ink-2:#434A45;--ease:cubic-bezier(.22,.8,.24,1);font-family:'Figtree',system-ui,sans-serif;color:var(--ink);background:var(--cream);font-size:18px;line-height:1.55;overflow-x:clip}
+.pv *{box-sizing:border-box}
+.pv img{display:block;max-width:100%}
+.pv h1,.pv h2,.pv h3{margin:0}
+.pv :focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.disp{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;letter-spacing:-.035em;line-height:.95}
+.hand{font-family:'Caveat',cursive;font-weight:700}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.hdr{background:var(--cream);border-bottom:1px solid rgba(18,21,19,.1)}
+.hdr-in{display:flex;align-items:center;gap:16px;min-height:76px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:44px;width:auto}
+.hdr-links{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.back{font-weight:700;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 8px}
+.back:hover{color:var(--green-d)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 26px;border-radius:999px;font-weight:700;font-size:17px;text-decoration:none;border:2px solid var(--ink);transition:transform .25s var(--ease),background-color .25s,color .25s}
+.btn .arr{transition:transform .3s var(--ease)}
+.btn:hover .arr,.btn:focus-visible .arr{transform:translateX(5px)}
+.btn-ink{background:var(--ink);color:var(--cream)}
+.btn-ink:hover{background:#000;color:var(--cream);transform:translateY(-2px)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--cream);transform:translateY(-2px)}
+.hdr .btn{min-height:46px;padding:0 18px;font-size:15px}
+.kicker{font-family:'Caveat',cursive;font-weight:700;font-size:30px;line-height:1;color:var(--green-d);display:block;margin-bottom:12px;transform:rotate(-2deg);transform-origin:left}
+.top{background:var(--green);position:relative;padding:72px 0 0;overflow:visible}
+.top-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:end}
+.top .kicker{color:var(--ink)}
+.top h1{font-size:clamp(54px,7vw,110px);margin-bottom:22px}
+.top p{margin:0 0 64px;font-size:20px;max-width:30em}
+.top-art{position:relative;height:100%;min-height:340px}
+.top-art img{position:absolute;right:4%;bottom:-70px;width:min(100%,330px);filter:drop-shadow(0 18px 20px rgba(18,21,19,.25))}
+.live{padding:120px 0 40px}
+.live-box{border:3px solid var(--ink);border-radius:36px;padding:40px clamp(24px,4vw,56px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px 40px;align-items:start;background:#fff}
+.live-ico{width:84px;height:84px;border-radius:50%;background:var(--yellow);display:grid;place-items:center}
+.live h2{font-size:clamp(32px,3.4vw,48px);margin-bottom:10px}
+.live p{margin:0 0 24px;color:var(--ink-2);max-width:40em}
+.live-actions{display:flex;flex-wrap:wrap;gap:12px}
+.tag{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:6px 12px;border-radius:8px;margin-bottom:14px}
+.ex{padding:80px 0 40px}
+.ex-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:24px;margin-bottom:34px}
+.ex h2{font-size:clamp(40px,4.6vw,66px)}
+.ex-head p{margin:10px 0 0;color:var(--ink-2);max-width:34em;font-size:17px}
+.filters{display:flex;flex-wrap:wrap;gap:10px}
+.chip{min-height:48px;padding:0 20px;border-radius:999px;border:2px solid var(--ink);background:transparent;font:700 16px 'Figtree',sans-serif;color:var(--ink);cursor:pointer;transition:background-color .2s,color .2s}
+.chip:hover{background:var(--yellow-l)}
+.chip.sel{background:var(--ink);color:var(--cream)}
+.chip .sub{font-weight:500;opacity:.8}
+.count{font-size:16px;font-weight:600;margin:0 0 22px}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px 26px}
+.card{position:relative;transform:rotate(var(--r,0deg));transition:transform .3s var(--ease)}
+.card:hover{transform:rotate(0deg) translateY(-6px)}
+.ph{position:relative;border-radius:var(--rad,28px);overflow:hidden;border:6px solid #fff;box-shadow:0 14px 28px rgba(18,21,19,.16);aspect-ratio:4/5;background:#ddd}
+.ph img{width:100%;height:100%;object-fit:cover}
+.flag{position:absolute;left:12px;bottom:12px;background:var(--yellow);color:var(--ink);font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:6px 10px;border-radius:8px;border:2px solid var(--ink)}
+.card h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;letter-spacing:-.02em;margin:14px 0 2px}
+.card p{margin:0;color:var(--ink-2);font-size:15px}
+.how{padding:100px 0 130px}
+.how-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:64px}
+.how h2{font-size:clamp(40px,4.6vw,66px);margin-bottom:30px}
+.steps{list-style:none;margin:0;padding:0}
+.steps li{display:grid;grid-template-columns:70px 1fr;gap:16px;padding:20px 0;border-top:2px dashed rgba(18,21,19,.3)}
+.steps li:last-child{border-bottom:2px dashed rgba(18,21,19,.3)}
+.steps .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:44px;line-height:1;color:var(--green)}
+.steps b{display:block;font-size:20px}
+.steps span{color:var(--ink-2);font-size:17px}
+.panel{background:var(--yellow-l);border-radius:32px 32px 32px 100px;padding:34px 34px 40px;margin-bottom:24px}
+.panel h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:28px;letter-spacing:-.02em;margin-bottom:14px}
+.panel ul{margin:0;padding-left:20px}
+.panel li{margin-bottom:6px;font-size:17px}
+.panel.ink{background:var(--ink);color:var(--cream);border-radius:32px}
+.panel.ink h3{color:var(--yellow)}
+.cnote{margin-top:24px;border:2px dashed #9A6A00;background:#FFF8E5;border-radius:16px;padding:16px 20px;font-size:15px;color:#4A3500}
+.cnote b{display:block;margin-bottom:4px;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+@media (max-width:1000px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.how-grid{grid-template-columns:1fr}.top-grid{grid-template-columns:1fr}.top-art{min-height:260px}.top-art img{width:240px;bottom:-60px}}
+@media (max-width:600px){.live-box{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr;gap:22px 14px}.card{--r:0deg !important}.card h3{font-size:21px}.btn{width:100%}.top p{margin-bottom:20px}}
+@media (prefers-reduced-motion:reduce){.pv *{transition:none !important}}
+</style>
+</head>
+<body>
+
+
+
+
+<div class="pv">
+<header class="hdr">
+<div class="wrap hdr-in">
+<a class="brand" href="index.html"><img src="assets/img/logo-nobg.png" alt="PALNV home" width="300" height="196"></a>
+<div class="hdr-links">
+<a class="back" href="index.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>Home</a>
+<a class="btn btn-ink" href="book.html">Book a visit</a>
+</div>
+</div>
+</header>
+<main>
+<section class="top" aria-labelledby="adopt-title">
+<div class="wrap top-grid">
+<div>
+<span class="kicker">Adopt from PALNV</span>
+<h1 class="disp" id="adopt-title">Meet the cats.</h1>
+<p>Every cat at the café is a rescue looking for a home. The best way to meet them is in person, so book an hour and let them pick you.</p>
+</div>
+<div class="top-art" aria-hidden="true"><img src="assets/img/grey-cat.webp" alt=""></div>
+</div>
+</section>
+
+<section class="live wrap" aria-labelledby="live-title">
+<div class="live-box">
+<div class="live-ico" aria-hidden="true"><svg width="44" height="44" viewBox="0 0 40 40" fill="#121513"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></svg></div>
+<div>
+<span class="tag">Live adoption list</span>
+<h2 class="disp" id="live-title">No cats loaded here yet.</h2>
+<p>Who&#39;s adoptable changes every week. On the finished site this list comes straight from PALNV&#39;s adoption system, so names, ages and photos are always current. For now, see today&#39;s cats on PALNV&#39;s website.</p>
+<div class="live-actions">
+<a class="btn btn-ink" href="https://www.palnv.org/adoptable" target="_blank" rel="noopener">See today&#39;s adoptable cats <svg class="arr" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn btn-line" href="https://new.shelterluv.com/matchme/adopt/PLNV/Cat" target="_blank" rel="noopener">Start an application</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="ex wrap" aria-labelledby="ex-title">
+<div class="ex-head">
+<div>
+<span class="tag">Concept examples only</span>
+<h2 class="disp" id="ex-title">How listings will look</h2>
+<p>Illustrative stock photos showing the card layout and age filter. These are not real PALNV cats and are not available for adoption.</p>
+</div>
+<div class="filters" id="filters" role="group" aria-label="Filter by age">
+
+</div>
+</div>
+<p class="count" id="count" aria-live="polite">Showing 8 concept examples</p>
+<div class="cards" id="cards"></div>
+</section>
+
+<section class="how wrap" aria-labelledby="how-title">
+<div class="how-grid">
+<div>
+<span class="kicker">How adoption works</span>
+<h2 class="disp" id="how-title">From hello to home.</h2>
+<ol class="steps">
+<li><span class="n">01</span><div><b>Visit the café</b><span>Meet the cats in person. PALNV doesn&#39;t offer pre-adoptions.</span></div></li>
+<li><span class="n">02</span><div><b>Apply</b><span>Submit an adoption application for the cat who chose you.</span></div></li>
+<li><span class="n">03</span><div><b>In-person interview</b><span>Chat with the team. Please allow up to 24 hours for approval.</span></div></li>
+<li><span class="n">04</span><div><b>Sign and go home</b><span>Sign the adoption contract once approved, and bring a carrier.</span></div></li>
+</ol>
+<p style="font-size: 16px; color: #434A45; margin: 20px 0 0">A non-refundable hold deposit may be placed after meeting a cat and applying. Holds are valid for three café business days. Adoptions are first-come, first-served.</p>
+
+<div class="cnote"><b>Client to confirm</b>The adoption page counts café business days as Thursday to Sunday, but the café also opens on Wednesdays. Age bands come from PALNV&#39;s published categories. Fees are deliberately left out of this concept.</div>
+
+</div>
+<div>
+<div class="panel">
+<h3>Every cat goes home</h3>
+<ul>
+<li>Spayed or neutered</li>
+<li>Up to date on rabies and FVRCP vaccines</li>
+<li>Microchipped</li>
+<li>Dewormed</li>
+<li>Tested and treated for fecal parasites</li>
+<li>FIV and FeLV tested</li>
+</ul>
+</div>
+<div class="panel ink">
+<h3>Bring with you</h3>
+<ul>
+<li>Valid photo ID (applicants must be 21+)</li>
+<li>Landlord approval or pet lease addendum, if you rent</li>
+<li>Consent from any spouse or roommates</li>
+<li>A pet carrier, if you plan to adopt that day</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+
+<script src="assets/js/adopt.js" defer></script>
+</body>
+</html>

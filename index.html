@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rescued Treasures Cat Café by PALNV | Las Vegas rescue cat café</title>
+<meta name="description" content="Rescued Treasures is PALNV's free-roaming rescue cat café in Las Vegas. Book a visit, meet adoptable cats and help a rescue cat get home. Design concept.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/img/logo-nobg.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Figtree:wght@400;500;600;700&amp;family=Caveat:wght@600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0B5E43}a:hover{color:#121513}
+.pv{--green:#14AE7C;--green-d:#0B5E43;--yellow:#F3C35F;--yellow-l:#F9E4B0;--cream:#FBF5E8;--ink:#121513;--ink-2:#3A403C;--mint:#3FD6BE;--ease:cubic-bezier(.22,.8,.24,1);font-family:'Figtree',system-ui,sans-serif;color:var(--ink);background:var(--cream);font-size:18px;line-height:1.55;overflow-x:clip;position:relative}
+.pv *{box-sizing:border-box}
+.pv img{display:block;max-width:100%}
+.pv h1,.pv h2,.pv h3{margin:0}
+.disp{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;letter-spacing:-.035em;line-height:.94}
+.hand{font-family:'Caveat',cursive;font-weight:700;letter-spacing:0}
+.wrap{max-width:1300px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.pv :focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.skip{position:absolute;left:12px;top:-80px;background:var(--ink);color:var(--cream);padding:12px 18px;z-index:200;border-radius:10px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px;color:var(--cream)}
+.kicker{font-family:'Caveat',cursive;font-weight:700;font-size:30px;line-height:1;color:var(--green-d);display:block;margin-bottom:14px;transform:rotate(-2deg);transform-origin:left}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 28px;border-radius:999px;font-weight:700;font-size:17px;line-height:1.1;text-decoration:none;border:2px solid var(--ink);transition:transform .25s var(--ease),background-color .25s,color .25s;cursor:pointer;font-family:inherit}
+.btn .arr{transition:transform .3s var(--ease);flex:none}
+.btn:hover .arr,.btn:focus-visible .arr{transform:translateX(5px)}
+.btn:active{transform:scale(.98)}
+.btn-ink{background:var(--ink);color:var(--cream)}
+.btn-ink:hover{background:#000;color:var(--cream);transform:translateY(-2px)}
+.btn-line{background:transparent;color:var(--ink)}
+.hero .btn-line,.final .btn-line{background:var(--cream)}
+.btn-line:hover{background:var(--ink);color:var(--cream);transform:translateY(-2px)}
+.btn-yel{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.btn-yel:hover{background:#FFD57A;color:var(--ink);transform:translateY(-2px)}
+.tlink{font-weight:700;color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.tlink:hover{color:var(--green-d)}
+.tlink .arr{transition:transform .3s var(--ease)}
+.tlink:hover .arr,.tlink:focus-visible .arr{transform:translateX(4px)}
+/* header */
+.hdr{position:sticky;top:0;z-index:60;background:#FBF5E8;border-bottom:1px solid rgba(18,21,19,.1)}
+.hdr-in{display:flex;align-items:center;gap:20px;min-height:78px;position:relative}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);flex:none}
+.brand img{height:46px;width:auto}
+.brand span{font-weight:700;font-size:13px;line-height:1.2;border-left:2px solid var(--ink);padding-left:12px}
+.nav{display:flex;gap:2px;margin-left:auto;align-items:center}
+.nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:16px;padding:10px 12px;border-radius:10px}
+.nav a:hover{background:var(--yellow-l);color:var(--ink)}
+.hdr-book{min-height:48px;padding:0 20px;font-size:15px;gap:0}
+.menu-btn{display:none}
+/* hero */
+.hero{position:relative;z-index:3;background:var(--yellow)}
+.hero .kicker{color:var(--ink)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:24px;min-height:680px}
+.hero-copy{padding:52px 0 92px;position:relative;z-index:6;align-self:center}
+.hero h1{font-size:clamp(46px,5.7vw,84px);margin:0 0 26px}
+.hero h1 .ln{display:block}
+.hero h1 .g{color:var(--cream);-webkit-text-stroke:3px var(--ink);paint-order:stroke fill;text-shadow:5px 5px 0 var(--ink)}
+.scrib{background-image:linear-gradient(var(--mint),var(--mint));background-repeat:no-repeat;background-position:0 86%;background-size:100% .26em;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .04em}
+.lead{font-size:clamp(18px,1.45vw,21px);max-width:31em;color:var(--ink-2);margin:0 0 36px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 26px;margin:38px 0 0;padding:0;list-style:none;font-weight:600;font-size:15px}
+.facts li{display:flex;align-items:center;gap:8px}
+.facts svg{width:18px;height:18px;color:var(--green-d);flex:none}
+.hero-art{position:relative;min-height:640px}
+.blob{position:absolute;left:4%;right:-3%;top:6%;bottom:0;background:var(--green);border-radius:52% 48% 0 0 / 42% 46% 0 0;transform:translate(calc(var(--px,0) * -12px),calc(var(--py,0) * -6px));transition:transform .5s ease-out}
+.halo{position:absolute;right:6%;top:15%;width:74%;aspect-ratio:1;border-radius:50%;background:var(--cream);transform:translate(calc(var(--px,0) * -6px),calc(var(--py,0) * -4px));transition:transform .5s ease-out;animation:pop .9s var(--ease) .15s both}
+.mintblob{position:absolute;left:-6%;bottom:0;width:38%;height:26%;border-radius:999px 999px 0 0;background:var(--mint);transform:translateX(calc(var(--px,0) * 14px));transition:transform .5s ease-out;animation:fade .8s ease .2s both}
+.sticker{position:absolute;z-index:7;left:-7%;bottom:22%;width:150px;height:150px;animation:spin 28s linear infinite;filter:drop-shadow(4px 4px 0 rgba(18,21,19,.25))}
+.sticker svg{width:100%;height:100%}
+.spark{position:absolute;pointer-events:none;transform:translate(calc(var(--px,0) * 18px),calc(var(--py,0) * 14px));transition:transform .5s ease-out}
+.squig{position:absolute;left:30%;top:2%;width:120px;height:40px;color:var(--ink);transform:rotate(-8deg) translate(calc(var(--px,0) * 12px),calc(var(--py,0) * 8px));transition:transform .5s ease-out}
+@keyframes pop{from{opacity:0;scale:.6}to{opacity:1;scale:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sun{position:absolute;width:112px;height:112px;left:8%;top:14%;color:var(--cream);transform:translate(calc(var(--px,0) * 16px),calc(var(--py,0) * 12px));transition:transform .5s ease-out}
+.hero-cat{--cw:clamp(330px,38vw,560px);position:absolute;z-index:5;width:var(--cw);right:3%;bottom:calc(var(--cw) * -0.201);filter:drop-shadow(0 10px 10px rgba(18,21,19,.18))}
+.hero-cat img{width:100%;height:auto}
+.note{position:absolute;z-index:6;right:3%;top:1%;text-align:right;font-size:36px;line-height:1;color:var(--ink);transform:rotate(-9deg) translate(calc(var(--px,0) * 8px),calc(var(--py,0) * 6px));transition:transform .5s ease-out;pointer-events:none}
+.note svg{display:block;width:110px;height:64px;margin:6px 0 0 auto;transform:scaleX(-1) rotate(8deg);color:var(--ink)}
+.hero .paw{color:var(--ink);transform:rotate(var(--r)) translate(calc(var(--px,0) * 10px),calc(var(--py,0) * 10px));transition:transform .5s ease-out}
+.paw{position:absolute;width:28px;height:28px;fill:currentColor;opacity:.85;pointer-events:none}
+/* hero load sequence */
+.ld{animation:up .7s var(--ease) both;animation-delay:calc(var(--d,0) * 110ms + 80ms)}
+.hero .scrib{animation:swipe .8s var(--ease) .75s both}
+.hero-cat{animation:rise .95s var(--ease) .3s both}
+.blob{animation:fade .8s ease .05s both}
+.note{animation:fade .6s ease 1.2s both}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(80px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes swipe{from{background-size:0 .26em}to{background-size:100% .26em}}
+@keyframes pawIn{from{opacity:0;transform:rotate(var(--r)) scale(.4)}to{opacity:.85;transform:rotate(var(--r)) scale(1)}}
+/* reveal on scroll (only when JS confirms IntersectionObserver) */
+.rv{transition:opacity .75s var(--ease),transform .75s var(--ease);transition-delay:calc(var(--d,0) * 100ms)}
+.anim [data-sec]:not(.is-in) .rv{opacity:0;transform:translateY(30px)}
+.trail .paw{transform:rotate(var(--r))}
+.anim [data-sec]:not(.is-in) .trail .paw{opacity:0}
+.anim [data-sec].is-in .trail .paw{animation:pawIn .45s var(--ease) both;animation-delay:calc(var(--i) * 150ms + 300ms)}
+/* cats */
+.cats{position:relative;z-index:2;background:var(--ink);color:var(--cream);padding:180px 0 90px}
+.cats .kicker{color:var(--mint)}
+.cats .tlink{color:var(--yellow)}
+.cats .tlink:hover{color:var(--cream)}
+.cats :focus-visible{outline-color:var(--yellow)}
+.cats-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px 64px;align-items:end;position:relative}
+.cats h2{font-size:clamp(46px,6vw,92px)}
+.cats-side p{margin:0 0 18px;font-size:19px;max-width:30em;color:#E9E4D8}
+.cats-links{display:flex;flex-wrap:wrap;gap:6px 26px}
+.cats .trail{position:absolute;left:-6px;top:-128px;width:300px;height:100px;color:var(--yellow)}
+.gal-wrap{position:relative;margin-top:56px}
+.gal{display:flex;gap:30px;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-left:max(clamp(20px,4vw,56px),calc((100% - 1300px) / 2 + 56px));padding:34px clamp(20px,4vw,56px) 46px max(clamp(20px,4vw,56px),calc((100% - 1300px) / 2 + 56px));align-items:flex-start;scrollbar-width:thin;scrollbar-color:var(--yellow) transparent}
+.gal:focus-visible{outline-offset:-6px}
+.card{flex:0 0 auto;scroll-snap-align:start;position:relative;display:block;text-decoration:none;color:var(--cream);transform:rotate(var(--r,0deg)) translateY(var(--y,0px));transition:transform .35s var(--ease)}
+.card:hover,.card:focus-visible{transform:rotate(0deg) translateY(calc(var(--y,0px) - 12px));color:var(--cream)}
+.card:focus-visible{outline:none}
+.card:focus-visible .ph{outline:4px solid var(--yellow);outline-offset:4px}
+.ph{overflow:hidden;background:#2a2a2a;border:7px solid var(--cream);border-radius:var(--rad,30px);box-shadow:0 16px 30px rgba(0,0,0,.45);position:relative}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .55s var(--ease)}
+.card:hover .ph img,.card:focus-visible .ph img{transform:scale(1.05)}
+.meet{position:absolute;left:50%;bottom:20px;transform:translate(-50%,10px);opacity:0;background:var(--yellow);color:var(--ink);padding:11px 18px;border-radius:999px;font-weight:700;font-size:15px;white-space:nowrap;transition:opacity .3s var(--ease),transform .3s var(--ease);display:flex;align-items:center;gap:8px}
+.card:hover .meet,.card:focus-visible .meet{opacity:1;transform:translate(-50%,0)}
+.cap{font-family:'Caveat',cursive;font-weight:700;font-size:25px;line-height:1.1;margin:12px 0 0 8px;color:var(--yellow)}
+.gal-ctrl{display:flex;gap:10px;justify-content:flex-end;max-width:1300px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.round{width:52px;height:52px;border-radius:50%;border:2px solid var(--cream);background:transparent;color:var(--cream);display:grid;place-items:center;cursor:pointer;transition:background-color .25s,color .25s,transform .25s var(--ease)}
+.round:hover{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+.round:active{transform:scale(.95)}
+.honest{margin-top:26px;font-size:15px;color:#CFCABE;max-width:56em}
+/* wave */
+.wave{position:absolute;left:0;width:100%;height:90px;display:block;pointer-events:none}
+/* cafe */
+.cafe{position:relative;background:var(--cream);padding:170px 0 150px;z-index:1}
+.cafe .wave{top:-1px;color:var(--ink)}
+.cafe-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:60px;align-items:center}
+.collage{position:relative;height:640px}
+.c-win{position:absolute;left:0;top:20px;width:84%;aspect-ratio:16/10.5;border-radius:40px 40px 40px 160px;overflow:hidden;transform:rotate(-2.5deg);box-shadow:0 18px 36px rgba(18,21,19,.18)}
+.c-win img,.c-pile img{width:100%;height:100%;object-fit:cover}
+.c-pile{position:absolute;left:2%;bottom:10px;width:46%;aspect-ratio:4/3;border-radius:28px;overflow:hidden;border:8px solid var(--cream);transform:rotate(-3deg);z-index:2;box-shadow:0 18px 36px rgba(18,21,19,.18)}
+.c-dot{position:absolute;right:0;bottom:20px;width:250px;height:250px;border-radius:50%;background:var(--yellow)}
+.c-cat{position:absolute;right:7%;bottom:40px;width:30%;z-index:3;filter:drop-shadow(0 12px 12px rgba(18,21,19,.2))}
+.c-note{position:absolute;left:51%;bottom:150px;font-size:30px;line-height:1.05;transform:rotate(-6deg);width:170px;z-index:4}
+.cafe h2{font-size:clamp(44px,5vw,76px);margin-bottom:24px}
+.cafe-copy>p{margin:0 0 30px;color:var(--ink-2)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.steps li{display:grid;grid-template-columns:76px 1fr;gap:18px;padding:18px 0;border-top:2px dashed rgba(18,21,19,.25)}
+.steps li:last-child{border-bottom:2px dashed rgba(18,21,19,.25)}
+.steps .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;line-height:1;color:var(--green)}
+.steps b{display:block;font-size:20px;margin-bottom:2px}
+.steps span{color:var(--ink-2);font-size:17px}
+/* impact */
+.impact-zone{background:var(--cream);padding:110px 0 40px;position:relative}
+.impact-head{min-height:380px;max-width:60%;padding-bottom:56px;display:flex;flex-direction:column;justify-content:flex-end}
+.impact{position:relative;margin:0 clamp(10px,2vw,28px);background:var(--green);border-radius:clamp(36px,4.5vw,72px);padding:clamp(70px,7vw,112px) 0 clamp(60px,6vw,96px);color:var(--ink)}
+.ginger{position:absolute;right:9%;bottom:calc(100% - 6px);width:clamp(210px,21vw,320px);z-index:2;transition:transform .9s var(--ease),opacity .7s ease}
+.anim .impact-zone:not(.is-in) .ginger{opacity:0;transform:translateX(60px)}
+.impact-head .kicker{color:var(--green-d)}
+.impact-head h2{font-size:clamp(42px,5vw,76px)}
+.figs{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr);gap:32px 48px;align-items:end;border-bottom:3px solid var(--ink);padding-bottom:40px}
+.fig b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.05em;line-height:.85;font-size:clamp(64px,7vw,108px)}
+.fig.big b{font-size:clamp(96px,13vw,200px)}
+.fig span{display:block;font-size:18px;font-weight:600;margin-top:12px;max-width:16em}
+.source{font-size:14px;margin:18px 0 0;font-weight:500}
+.path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin:64px 0 0;padding:0;list-style:none;position:relative}
+.path:before{content:'';position:absolute;left:24px;right:12%;top:24px;border-top:3px dashed var(--ink);opacity:.5}
+.path li{position:relative}
+.path .dotn{width:50px;height:50px;border-radius:50%;background:var(--cream);border:3px solid var(--ink);display:grid;place-items:center;font-weight:800;font-size:18px;position:relative;margin-bottom:18px}
+.path li:last-child .dotn{background:var(--yellow)}
+.path b{display:block;font-size:21px;margin-bottom:6px}
+.path span{font-size:16px;font-weight:500}
+.sthi{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 40px;align-items:center;margin-top:56px;background:var(--cream);border-radius:28px;padding:28px 34px}
+.sthi p{margin:0;font-size:17px}
+/* help */
+.help{position:relative;background:var(--yellow-l);padding:130px 0 130px}
+.help .wave{top:-1px;color:var(--cream)}
+.help-head{text-align:center;max-width:780px;margin:0 auto 60px}
+.help-head .kicker{transform:rotate(-2deg);transform-origin:center}
+.help h2{font-size:clamp(46px,6vw,90px);margin-bottom:16px}
+.help-head p{margin:0;font-size:19px;color:var(--ink-2)}
+.help-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,400px) minmax(0,1fr);gap:40px 52px;align-items:center}
+.help-col{display:grid;gap:26px}
+.act{display:block;padding:24px 0 6px;border-top:3px solid var(--ink);text-decoration:none;color:var(--ink);transition:color .25s}
+.act h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.035em;line-height:1;font-size:clamp(40px,4.2vw,62px);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.act h3 svg{width:40px;height:40px;transition:transform .3s var(--ease);flex:none}
+.act p{margin:10px 0 0;color:var(--ink-2);font-size:17px}
+.act:hover,.act.on{color:var(--green-d)}
+.act:hover h3 svg,.act:focus-visible h3 svg,.act.on h3 svg{transform:translateX(6px) rotate(-8deg)}
+.help-art{position:relative;aspect-ratio:4/5.2}
+.h-shape{position:absolute;left:0;right:0;bottom:0;height:72%;background:var(--green);transition:border-radius .6s var(--ease),background-color .4s}
+.shape-adopt{border-radius:50% 50% 34px 34px / 42% 42% 34px 34px}
+.shape-foster{border-radius:62% 38% 34px 34px / 52% 36% 34px 34px}
+.shape-volunteer{border-radius:38% 62% 34px 34px / 34% 54% 34px 34px}
+.shape-donate{border-radius:50% 50% 34px 34px / 24% 24% 34px 34px}
+.h-cat{position:absolute;left:12%;width:76%;bottom:3%;z-index:2;filter:drop-shadow(0 18px 20px rgba(18,21,19,.25))}
+.bubble{position:absolute;z-index:3;left:-6%;top:2%;background:var(--cream);border:3px solid var(--ink);border-radius:26px 26px 26px 6px;padding:10px 18px 12px;font-size:30px;line-height:1;transform:rotate(-5deg);box-shadow:5px 5px 0 var(--ink);max-width:250px}
+/* visit */
+.visit{position:relative;background:var(--cream);padding:150px 0 150px}
+.visit .wave{top:-1px;color:var(--yellow-l)}
+.visit-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}
+.visit h2{font-size:clamp(50px,6.4vw,100px);margin-bottom:40px}
+.hours{margin:0 0 36px;display:grid;gap:0}
+.hours div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:baseline;padding:16px 0;border-top:2px solid var(--ink)}
+.hours div:last-child{border-bottom:2px solid var(--ink)}
+.hours dt{font-weight:700;font-size:19px}
+.hours dd{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,2.8vw,40px);letter-spacing:-.03em;line-height:1}
+.hours .closed dd{color:#6B716D}
+.addr{font-size:19px;margin:0 0 6px;font-style:normal}
+.contact-row{display:flex;flex-wrap:wrap;gap:4px 26px;margin-top:10px}
+.cnote{margin-top:28px;border:2px dashed #9A6A00;background:#FFF8E5;border-radius:16px;padding:16px 20px;font-size:15px;color:#4A3500}
+.cnote b{display:block;margin-bottom:4px;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+.rules{list-style:none;padding:0;margin:0 0 40px;display:grid;gap:18px}
+.rules li{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;font-size:18px}
+.rules svg{width:30px;height:30px;color:var(--green);transform:rotate(-14deg)}
+.rules b{display:block}
+.visit h3{font-size:30px;margin-bottom:24px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.03em}
+.book-panel{background:var(--ink);color:var(--cream);border-radius:36px 36px 36px 120px;padding:40px 40px 44px;position:relative;overflow:hidden}
+.book-panel h3{color:var(--cream);font-size:clamp(34px,3.2vw,48px);margin-bottom:12px}
+.book-panel p{margin:0 0 26px;color:#D9D4C8;max-width:28em}
+.book-panel .small{margin:20px 0 0;font-size:15px;color:#C9C4B8}
+.book-panel .paw{color:var(--yellow);opacity:.9}
+/* final */
+.final{position:relative;background:var(--yellow);--pw:clamp(320px,38vw,560px)}
+.final .wave{top:-1px;color:var(--cream)}
+.final-in{padding-top:170px;padding-bottom:200px;position:relative;z-index:3}
+.final h2{font-size:clamp(50px,6.4vw,104px);max-width:9.5em;margin-bottom:34px}
+.final p{margin:0 0 34px;font-size:20px;max-width:28em}
+.final-art{position:absolute;right:0;bottom:0;width:var(--pw);height:calc(var(--pw) * .62);z-index:2}
+.peek{position:absolute;right:0;bottom:calc(var(--pw) * -0.46);width:var(--pw);transform:scaleX(-1);transition:transform 1s var(--ease),opacity .7s ease}
+.anim .final:not(.is-in) .peek{transform:scaleX(-1) translateY(90px);opacity:0}
+.final .note2{position:absolute;right:calc(var(--pw) * .82);bottom:calc(var(--pw) * .34);font-size:32px;transform:rotate(-7deg);z-index:3;line-height:1;white-space:nowrap}
+/* footer */
+.ftr{position:relative;z-index:4;background:var(--ink);color:#E9E4D8;padding:80px 0 40px;font-size:16px}
+.ftr a{color:#E9E4D8}
+.ftr a:hover{color:var(--yellow)}
+.ftr-grid{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:40px}
+.plate{display:inline-flex;align-items:center;gap:16px;background:var(--cream);border-radius:22px;padding:14px 20px;margin-bottom:22px}
+.plate img{height:56px;width:auto}
+.ftr h3{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px;font-weight:700}
+.ftr ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ftr p{margin:0 0 8px}
+.ftr-base{margin-top:60px;padding-top:24px;border-top:1px solid rgba(233,228,216,.2);display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between;font-size:14px;color:#BDB8AC}
+/* responsive */
+@media (max-width:1100px){
+.nav a{padding:10px 8px;font-size:15px}
+.brand span{display:none}
+}
+@media (max-width:980px){
+.menu-btn{display:inline-flex;align-items:center;gap:8px;margin-left:auto;min-height:48px;padding:0 18px;border-radius:999px;border:2px solid var(--ink);background:transparent;color:var(--ink);font:700 15px 'Figtree',sans-serif;cursor:pointer}
+.nav{display:none;position:absolute;left:-20px;right:-20px;top:100%;flex-direction:column;align-items:stretch;background:#FBF5E8;padding:10px 20px 22px;border-bottom:2px solid var(--ink)}
+.nav.open{display:flex}
+.nav a{font-size:20px;padding:14px 8px;border-bottom:1px solid rgba(18,21,19,.1);border-radius:0}
+.hero-grid{grid-template-columns:1fr;min-height:0}
+.hero-copy{padding:44px 0 10px}
+.hero-art{min-height:0;height:clamp(360px,86vw,560px)}
+.blob{left:-8%;right:-8%;top:16%}
+.hero-cat{--cw:min(80vw,470px);right:auto;left:calc(50% - var(--cw) / 2)}
+.note{right:2%;top:0;font-size:28px}
+.note svg{width:80px;height:50px}
+.sun{left:4%;top:6%;width:84px;height:84px}
+.sticker{width:108px;height:108px;left:0;bottom:30%}
+.squig{display:none}
+.cats{padding-top:150px}
+.cats-head{grid-template-columns:1fr}
+.cats .trail{display:none}
+.cafe-grid{grid-template-columns:1fr}
+.collage{height:min(100vw,600px)}
+.figs{grid-template-columns:1fr 1fr}
+.fig.big{grid-column:1 / -1}
+.path{grid-template-columns:1fr 1fr}
+.path:before{display:none}
+.sthi{grid-template-columns:1fr}
+.help-grid{grid-template-columns:1fr}
+.help-art{order:-1;width:min(100%,360px);margin:0 auto}
+.visit-grid{grid-template-columns:1fr}
+.ftr-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+.pv{font-size:17px}
+.hdr-in{min-height:68px;gap:10px}
+.brand img{height:38px}
+.hdr-book{padding:0 16px;min-height:46px}
+.hdr-book .lg{display:none}
+.menu-btn{padding:0 14px}
+.btn{width:100%}
+.hdr .hdr-book{width:auto}
+.cta-row{flex-direction:column}
+.cats{padding:120px 0 100px}
+.card{--r:0deg !important;--y:0px !important}
+.c-cat{width:34%;right:2%}
+.c-note{font-size:24px;width:130px;left:49%;bottom:110px}
+.figs{grid-template-columns:1fr}
+.path{grid-template-columns:1fr}
+.impact-zone{padding-top:70px}
+.impact-head{max-width:100%;min-height:0;padding-bottom:250px}
+.ginger{width:200px;right:6%}
+.bubble{left:0;font-size:26px}
+.book-panel{border-radius:30px 30px 30px 70px;padding:32px 24px 36px}
+.final{--pw:78vw}
+.final-in{padding-top:130px;padding-bottom:30px}
+.final-art{position:relative;width:100%;height:calc(var(--pw) * .62)}
+.final .note2{right:auto;left:20px;bottom:auto;top:-10px;font-size:27px}
+.ftr-grid{grid-template-columns:1fr}
+}
+@media (hover:none){.meet{opacity:1;transform:translate(-50%,0)}}
+@media (prefers-reduced-motion:reduce){
+.pv *,.pv *:before,.pv *:after{animation:none !important;transition:none !important}
+.gal{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+
+
+
+<div class="pv" id="pv">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+<div class="wrap hdr-in">
+<a class="brand" href="#top" aria-label="PALNV and Rescued Treasures Cat Café, home">
+<img src="assets/img/logo-nobg.png" alt="PALNV, Protecting Animal Life" width="300" height="196">
+<span>Rescued Treasures<br>Cat Café</span>
+</a>
+<button class="menu-btn" type="button" aria-expanded="false" id="menuBtn" aria-controls="site-nav">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+Menu
+</button>
+<nav class="nav" id="site-nav" aria-label="Main">
+<a href="#cats">Meet the cats</a>
+<a href="#cafe">The café</a>
+<a href="#impact">Our rescue work</a>
+<a href="#help">Get involved</a>
+<a href="#visit">Visit</a>
+<a href="https://www.palnv.org/donate" target="_blank" rel="noopener">Donate</a>
+</nav>
+<a class="btn btn-ink hdr-book" href="book.html">Book<span class="lg">&nbsp;a visit</span></a>
+</div>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="top" data-hero="" aria-labelledby="hero-title">
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<span class="kicker ld" style="--d:0">Las Vegas&#39;s rescue cat café</span>
+<h1 class="disp" id="hero-title"><span class="ln ld" style="--d:1">Come for <span class="g">the cats.</span></span><span class="ln ld" style="--d:2">Leave with a <span class="scrib">friend for life.</span></span></h1>
+<p class="lead ld" style="--d:3">Rescued Treasures is PALNV&#39;s free-roaming cat café. Settle in with adoptable cats and kittens, then help one of them find a home.</p>
+<div class="cta-row ld" style="--d:4">
+<a class="btn btn-ink" href="book.html">Book a café visit <svg class="arr" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn btn-line" href="adopt.html">Meet the cats</a>
+</div>
+<ul class="facts ld" style="--d:5">
+<li><svg viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></svg>Open Wednesday to Sunday</li>
+<li><svg viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></svg>Sessions start on the hour</li>
+<li><svg viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></svg>Ages 8 and up</li>
+</ul>
+</div>
+<div class="hero-art" aria-hidden="true">
+<div class="blob"></div>
+<div class="halo"></div>
+<div class="mintblob"></div>
+<svg class="squig" viewBox="0 0 120 40" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 28c10-18 20-18 26 0s16 18 26 0 16-18 26 0 16 18 26 0"></path></svg>
+<svg class="spark" viewBox="0 0 24 24" style="right:4%;top:38%;width:34px;height:34px;color:#FBF5E8" fill="currentColor"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0Z"></path></svg>
+<svg class="spark" viewBox="0 0 24 24" style="left:2%;top:30%;width:26px;height:26px;color:#121513" fill="currentColor"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0Z"></path></svg>
+<svg class="spark" viewBox="0 0 24 24" style="right:24%;top:6%;width:20px;height:20px;color:#3FD6BE" fill="currentColor"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0Z"></path></svg>
+<div class="sticker"><svg viewBox="0 0 200 200"><defs><path id="stickerCircle" d="M100,100 m-70,0 a70,70 0 1,1 140,0 a70,70 0 1,1 -140,0"></path></defs><circle cx="100" cy="100" r="97" fill="#121513"></circle><circle cx="100" cy="100" r="88" fill="none" stroke="#3FD6BE" stroke-width="2" stroke-dasharray="4 7"></circle><text fill="#FBF5E8" font-family="Figtree, sans-serif" font-weight="700" font-size="17" letter-spacing="2"><textPath href="#stickerCircle" textLength="436">EVERY CAT HERE IS A RESCUE &#183; ADOPT &#183;</textPath></text><g transform="translate(70 70) scale(1.5)" fill="#F3C35F"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></g></svg></div>
+<svg class="sun" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"><path d="M60 10v18M60 92v18M10 60h18M92 60h18M24 24l13 13M83 83l13 13M96 24L83 37M37 83L24 96"></path></svg>
+<svg class="paw" viewBox="0 0 40 40" style="left:6%;top:62%;--r:-18deg"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></svg>
+<svg class="paw" viewBox="0 0 40 40" style="left:13%;top:53%;--r:-8deg"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></svg>
+<div class="note hand">Your next<br>best friend?<svg viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10c22 2 50 10 70 32 6 7 10 14 13 21"></path><path d="M78 52l12 12 6-16"></path></svg></div>
+<div class="hero-cat"><img src="assets/img/hero-cat.webp" alt="" width="1145" height="1230"></div>
+</div>
+</div>
+</section>
+
+<!-- MEET THE CATS -->
+<section class="cats" id="cats" data-sec="cats" aria-labelledby="cats-title">
+<div class="wrap">
+<div class="cats-head">
+<div class="trail" aria-hidden="true">
+<svg class="paw" viewBox="0 0 40 40" style="left:0;top:70px;--r:62deg;--i:0"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></svg>
+<svg class="paw" viewBox="0 0 40 40" style="left:58px;top:42px;--r:70deg;--i:1"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></svg>
+<svg class="paw" viewBox="0 0 40 40" style="left:118px;top:58px;--r:64deg;--i:2"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></svg>
+<svg class="paw" viewBox="0 0 40 40" style="left:176px;top:26px;--r:74deg;--i:3"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></svg>
+<svg class="paw" viewBox="0 0 40 40" style="left:236px;top:40px;--r:66deg;--i:4"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></svg>
+</div>
+<div class="rv" style="--d:0">
+<span class="kicker">Straight from the rescue room</span>
+<h2 class="disp" id="cats-title">Every whisker here was rescued.</h2>
+</div>
+<div class="cats-side rv" style="--d:1">
+<p>These are cats PALNV has pulled from danger and nursed back to health. Who&#39;s adoptable changes week to week, so the live list comes straight from PALNV&#39;s adoption system.</p>
+<div class="cats-links">
+<a class="tlink" href="adopt.html">See who&#39;s adoptable now <svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</div>
+</div>
+<div class="gal-wrap rv" style="--d:2">
+<div class="gal" data-gal="" tabindex="0" role="region" aria-label="Photos of cats rescued by PALNV. Scroll sideways for more.">
+<a class="card" href="adopt.html" style="--r:-2.5deg;--y:10px;--rad:999px 999px 30px 30px;width:290px">
+<div class="ph" style="height:420px"><img src="assets/img/r-siamese.webp" alt="A fluffy pale kitten with dark points sitting on a counter" loading="lazy"></div>
+<span class="meet">Meet the cats <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+<p class="cap">Fluff, mostly</p>
+</a>
+<a class="card" href="adopt.html" style="--r:1.8deg;--y:60px;width:440px">
+<div class="ph" style="height:270px"><img src="assets/img/r-tabby-cone.webp" alt="A tabby cat resting on a blanket while wearing a recovery cone" loading="lazy"></div>
+<span class="meet">Meet the cats <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+<p class="cap">Recovering, cone and all</p>
+</a>
+<a class="card" href="adopt.html" style="--r:-1.2deg;--y:0px;--rad:30px 30px 120px 30px;width:320px">
+<div class="ph" style="height:300px"><img src="assets/img/r-calico-mum.webp" alt="A calico mother cat with her kittens in a basket" loading="lazy"></div>
+<span class="meet">Meet the cats <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+<p class="cap">Mum, on duty</p>
+</a>
+<a class="card" href="adopt.html" style="--r:2.4deg;--y:36px;--rad:999px 999px 30px 30px;width:280px">
+<div class="ph" style="height:400px"><img src="assets/img/r-tabby-ball.webp" alt="A long-haired tabby kitten lying on a grey blanket next to a toy ball" loading="lazy"></div>
+<span class="meet">Meet the cats <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+<p class="cap">Ball, secured</p>
+</a>
+<a class="card" href="adopt.html" style="--r:-2deg;--y:4px;width:330px">
+<div class="ph" style="height:260px"><img src="assets/img/r-kitten-trio.webp" alt="Three grey and white kittens exploring together" loading="lazy"></div>
+<span class="meet">Meet the cats <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+<p class="cap">Three&#39;s company</p>
+</a>
+<a class="card" href="adopt.html" style="--r:1.4deg;--y:48px;--rad:30px 120px 30px 30px;width:440px">
+<div class="ph" style="height:270px"><img src="assets/img/r-black-mum.webp" alt="A black mother cat curled around her newborn kittens" loading="lazy"></div>
+<span class="meet">Meet the cats <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+<p class="cap">New family, safe and warm</p>
+</a>
+<a class="card" href="adopt.html" style="--r:-1.6deg;--y:12px;width:420px">
+<div class="ph" style="height:260px"><img src="assets/img/r-kitten-pile.webp" alt="A pile of sleeping kittens on a fleece bed" loading="lazy"></div>
+<span class="meet">Meet the cats <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+<p class="cap">Nap pile</p>
+</a>
+<a class="card" href="adopt.html" style="--r:2deg;--y:40px;--rad:120px 30px 30px 30px;width:420px">
+<div class="ph" style="height:260px"><img src="assets/img/r-grey-bars.webp" alt="A grey cat peering through the bars of a kennel" loading="lazy"></div>
+<span class="meet">Meet the cats <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+<p class="cap">Waiting for a door to open</p>
+</a>
+</div>
+<div class="gal-ctrl">
+<button class="round" type="button" aria-label="Scroll photos left" data-gal-prev=""><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<button class="round" type="button" aria-label="Scroll photos right" data-gal-next=""><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+<div class="wrap"><p class="honest">Photos from PALNV&#39;s rescue archive. They show the kind of cats PALNV saves, not a list of who&#39;s available today.</p></div>
+</div>
+</section>
+
+<!-- CAFE -->
+<section class="cafe" id="cafe" data-sec="cafe" aria-labelledby="cafe-title">
+<svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v34c-120 40-260 52-420 30S720 6 560 22 240 86 0 56z"></path></svg>
+<div class="wrap cafe-grid">
+<div class="collage rv" style="--d:0">
+<div class="c-dot" aria-hidden="true"></div>
+<div class="c-win"><img src="assets/img/cafe-windows.webp" alt="The front windows of Rescued Treasures Cat Café, painted with cartoon cats and the words Time spent with cats is never wasted" loading="lazy"></div>
+<div class="c-pile"><img src="assets/img/r-kitten-pile.webp" alt="Kittens napping together on a fleece bed" loading="lazy"></div>
+<img class="c-cat" src="assets/img/happy-cat.webp" alt="" aria-hidden="true" loading="lazy">
+<p class="c-note hand" aria-hidden="true">Our front window says it best.</p>
+</div>
+<div class="cafe-copy">
+<div class="rv" style="--d:1">
+<span class="kicker">Inside the café</span>
+<h2 class="disp" id="cafe-title">Free-roaming cats. Zero rush.</h2>
+<p>Rescued Treasures is a relaxed, welcoming space where adoptable cats and kittens wander, nap and say hello on their own terms. Complimentary Wi-Fi, snacks and drinks are included, and there are special events through the year.</p>
+</div>
+<ol class="steps rv" style="--d:2">
+<li><span class="n">01</span><div><b>Book your hour</b><span>Sessions start on the hour. Walk-ins are welcome when there&#39;s room.</span></div></li>
+<li><span class="n">02</span><div><b>Arrive a little early</b><span>Give yourself 5 to 10 minutes to check in.</span></div></li>
+<li><span class="n">03</span><div><b>Let the cats come to you</b><span>Find a comfy spot. The cats roam free and pick their people.</span></div></li>
+<li><span class="n">04</span><div><b>Fall for someone?</b><span>Ask the team how adoption works. It starts right there in the café.</span></div></li>
+</ol>
+</div>
+</div>
+</section>
+
+<!-- IMPACT -->
+<section class="impact-zone" id="impact" data-sec="impact" aria-labelledby="impact-title">
+<div class="wrap"><div class="impact-head rv" style="--d:0">
+<span class="kicker">Rescue, in numbers</span>
+<h2 class="disp" id="impact-title">Behind every number is a cat who got a second chance.</h2>
+</div></div>
+<div class="impact">
+<img class="ginger" src="assets/img/ginger-cat.webp" alt="" aria-hidden="true" loading="lazy">
+<div class="wrap">
+<div class="figs rv" style="--d:1">
+<div class="fig big"><b>3,829</b><span>cats and kittens adopted since 2019</span></div>
+<div class="fig"><b>4,218</b><span>taken into PALNV&#39;s care since 2019</span></div>
+<div class="fig"><b>422</b><span>adopted in 2026, January to September</span></div>
+</div>
+<p class="source rv" style="--d:2">Figures from PALNV&#39;s published &#8220;Our Impact&#8221; table on palnv.org, checked 17 November 2026.</p>
+<ol class="path rv" style="--d:3">
+<li><span class="dotn">1</span><b>Off the transfer list</b><span>Cats at the Las Vegas municipal shelter who need medical care, behaviour support or simply space.</span></li>
+<li><span class="dotn">2</span><b>Foster first</b><span>They recover and decompress in a volunteer foster home.</span></li>
+<li><span class="dotn">3</span><b>Café time</b><span>At the café they get medical care, socialising and adoption support.</span></li>
+<li><span class="dotn">4</span><b>Home</b><span>Someone meets them, applies, and takes a friend home.</span></li>
+</ol>
+<div class="sthi rv" style="--d:4">
+<p><b>The Shelter-to-Home Initiative</b> aims to rescue 500 cats and kittens from Las Vegas&#39;s municipal shelter in one year, with Best Friends Animal Society and The Animal Foundation.</p>
+<a class="tlink" href="https://www.palnv.org/sthi" target="_blank" rel="noopener">About the initiative <svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- HELP -->
+<section class="help" id="help" data-sec="help" aria-labelledby="help-title">
+<svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v48c-200 36-380 40-560 14S520 20 340 44 120 70 0 40z"></path></svg>
+<div class="wrap">
+<div class="help-head rv" style="--d:0">
+<span class="kicker">Get involved</span>
+<h2 class="disp" id="help-title">Help a cat get home.</h2>
+<p>Adopting is the big one. Fostering, volunteering and giving keep the whole rescue running.</p>
+</div>
+<div class="help-grid">
+<div class="help-col rv" style="--d:1">
+<a class="act on" data-help="adopt" href="adopt.html">
+<h3>Adopt <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></h3>
+<p>Meet the cats at the café, apply, and complete an in-person interview. Applicants must be 21 or older.</p>
+</a>
+<a class="act" data-help="foster" href="https://www.palnv.org/foster" target="_blank" rel="noopener">
+<h3>Foster <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></h3>
+<p>Give a cat a quiet place to recover. Most placements last two weeks to two months. Ages 21 and up.</p>
+</a>
+</div>
+<div class="help-art" aria-hidden="true">
+<div class="h-shape shape-adopt" id="hShape"></div>
+<img class="h-cat" src="assets/img/grey-cat.webp" alt="" loading="lazy">
+<p class="bubble hand"><span id="helpNote">Forever home, please?</span></p>
+</div>
+<div class="help-col rv" style="--d:2">
+<a class="act" data-help="volunteer" href="https://www.palnv.org/volunteer" target="_blank" rel="noopener">
+<h3>Volunteer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></h3>
+<p>Join the Cat Care Crew, help in the café, drive cats to the vet and more. Ages 16 and up, orientation first.</p>
+</a>
+<a class="act" data-help="donate" href="https://www.palnv.org/donate" target="_blank" rel="noopener">
+<h3>Donate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></h3>
+<p>Gifts fund medical care, food and supplies. You can also give in kind or sponsor a cat.</p>
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- VISIT -->
+<section class="visit" id="visit" data-sec="visit" aria-labelledby="visit-title">
+<svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v30c-160 46-320 56-500 30S600 10 420 28 160 76 0 52z"></path></svg>
+<div class="wrap visit-grid">
+<div class="rv" style="--d:0">
+<span class="kicker">Plan your visit</span>
+<h2 class="disp" id="visit-title">Come say hello.</h2>
+<dl class="hours">
+<div><dt>Wednesday</dt><dd>12–5 PM</dd></div>
+<div><dt>Thursday to Sunday</dt><dd>12–6 PM</dd></div>
+<div class="closed"><dt>Monday and Tuesday</dt><dd>Closed</dd></div>
+</dl>
+<address class="addr"><b>Rescued Treasures Cat Café by PALNV</b><br>4601 N Rancho Dr., Las Vegas, NV 89130</address>
+<div class="contact-row">
+<a class="tlink" href="https://www.google.com/maps/search/?api=1&amp;query=4601%20N%20Rancho%20Dr%2C%20Las%20Vegas%2C%20NV%2089130" target="_blank" rel="noopener">Get directions <svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="tlink" href="tel:+17026296351">702-629-6351</a>
+<a class="tlink" href="mailto:info@rtcatcafe.org">info@rtcatcafe.org</a>
+</div>
+
+<div class="cnote"><b>Client to confirm</b>Hours above match palnv.org/hours (12 PM opening). The reservations page says 11 AM. The adoption page counts café business days as Thursday to Sunday. Please also confirm the street address and suite number (the café door shows 150), since a possible move was flagged.</div>
+
+</div>
+<div class="rv" style="--d:1">
+<h3>Good to know</h3>
+<ul class="rules">
+<li><svg viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></svg><div><b>Sessions start on the hour.</b>Arrive 5 to 10 minutes early to check in.</div></li>
+<li><svg viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></svg><div><b>Children 8 and older only.</b>Younger visitors can&#39;t join a session.</div></li>
+<li><svg viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></svg><div><b>Walk-ins welcome if there&#39;s room.</b>The café holds up to 15 people.</div></li>
+<li><svg viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></svg><div><b>Adoptions are first-come, first-served.</b>We don&#39;t offer pre-adoptions.</div></li>
+</ul>
+<div class="book-panel">
+<svg class="paw" viewBox="0 0 40 40" style="right:34px;top:30px;--r:20deg" aria-hidden="true"><ellipse cx="20" cy="27" rx="9" ry="7.5"></ellipse><ellipse cx="8.5" cy="16.5" rx="3.6" ry="4.6"></ellipse><ellipse cx="15.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="24.5" cy="9.5" rx="3.6" ry="4.8"></ellipse><ellipse cx="31.5" cy="16.5" rx="3.6" ry="4.6"></ellipse></svg>
+<h3>Book your hour</h3>
+<p>Pick a day, a start time and your group size. You&#39;ll finish on PALNV&#39;s official booking system, which confirms your session.</p>
+<a class="btn btn-yel" href="book.html">Book a café visit <svg class="arr" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<p class="small">Donation drop-off and office hours: daily, 12–5 PM.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" data-sec="final" aria-labelledby="final-title">
+<svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v52c-180 30-360 30-540 6S540 16 360 36 140 60 0 34z"></path></svg>
+<div class="wrap final-in">
+<div class="rv" style="--d:0">
+<h2 class="disp" id="final-title">Your new best friend might already be here.</h2>
+<p>Book an hour, meet the cats, and see who chooses you.</p>
+<div class="cta-row">
+<a class="btn btn-ink" href="book.html">Book a café visit <svg class="arr" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn btn-line" href="adopt.html">Meet the cats</a>
+</div>
+</div>
+</div>
+<div class="final-art" aria-hidden="true">
+<p class="note2 hand">Oh, hello.</p>
+<img class="peek" src="assets/img/tabby-up.webp" alt="" loading="lazy">
+</div>
+</section>
+</main>
+
+<footer class="ftr">
+<div class="wrap">
+<div class="ftr-grid">
+<div>
+<div class="plate"><img src="assets/img/logo-nobg.png" alt="PALNV, Protecting Animal Life" width="300" height="196"><img src="assets/img/rtcc.png" alt="Rescued Treasures Cat Café" width="300" height="276"></div>
+<p>PALNV saves domestic cats and kittens who aren&#39;t equipped to survive life on the streets. Nonprofit since 1994, in Las Vegas since 2014.</p>
+</div>
+<div>
+<h3>Visit</h3>
+<p>4601 N Rancho Dr.<br>Las Vegas, NV 89130</p>
+<p>Wed 12–5 PM<br>Thu to Sun 12–6 PM<br>Mon and Tue closed</p>
+</div>
+<div>
+<h3>Get involved</h3>
+<ul>
+<li><a href="adopt.html">Adoptable cats</a></li>
+<li><a href="book.html">Book a café visit</a></li>
+<li><a href="https://www.palnv.org/foster" target="_blank" rel="noopener">Foster</a></li>
+<li><a href="https://www.palnv.org/volunteer" target="_blank" rel="noopener">Volunteer</a></li>
+<li><a href="https://www.palnv.org/donate" target="_blank" rel="noopener">Donate</a></li>
+<li><a href="https://www.palnv.org/cat-help" target="_blank" rel="noopener">Cat help resources</a></li>
+</ul>
+</div>
+<div>
+<h3>Say hi</h3>
+<ul>
+<li><a href="tel:+17026296351">702-629-6351</a></li>
+<li><a href="mailto:info@rtcatcafe.org">info@rtcatcafe.org</a></li>
+<li><a href="http://instagram.com/rtcatcafe" target="_blank" rel="noopener">Instagram</a></li>
+<li><a href="http://facebook.com/rescuedtreasurescatcafe" target="_blank" rel="noopener">Facebook</a></li>
+<li><a href="https://www.tiktok.com/@rtcatcafe_lv" target="_blank" rel="noopener">TikTok</a></li>
+<li><a href="https://www.youtube.com/channel/UCC2Kwi6ozZ10H1bcnwRnZTw" target="_blank" rel="noopener">YouTube</a></li>
+</ul>
+</div>
+</div>
+<div class="ftr-base">
+<span>PALNV, Protecting Animal Life. Rescued Treasures Cat Café.</span>
+<span>Design concept. Rescue photos: PALNV. Illustrative cat photography: Unsplash.</span>
+</div>
+</div>
+</footer>
+</div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
